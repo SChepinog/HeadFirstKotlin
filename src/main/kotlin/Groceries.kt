@@ -43,4 +43,19 @@ fun main() {
     groceries.forEach { itemNames += "${it.name} " }
     println("itemNames: $itemNames")
 
+    groceries.groupBy { it.category }.forEach{
+        println(it.key)
+        it.value.forEach { println("    ${it.name}") }
+    }
+
+    val ints = listOf(1,2,3)
+    val sumOfInts = ints.fold(0) {total, item -> total + item}
+    println("sumOfInts: $sumOfInts")
+
+    val productOfInts = ints.fold(1) {total, item -> total * item}
+    println("productOfInts: $productOfInts")
+
+    val names = groceries.fold("") {total, tem -> "$total ${tem.name}" }
+    println("names: $names")
+
 }
