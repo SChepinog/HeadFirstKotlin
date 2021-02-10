@@ -28,8 +28,12 @@ fun playSound(file: Drum) {
 }
 
 enum class Drum(val filename : String) {
-    TOMS("toms.aiff"),
-    CRASH_CYMBAL("crash_cymbal.aiff")
+    CRASH_CYMBAL("crash_cymbal.aiff"),
+    FLOOR_TOMS("floor_toms.aiff"),
+    HIGH_HAT("high_hat.aiff"),
+    KICK_DRUM("kick_drum.aiff"),
+    SNARE("snare.aiff"),
+    TOMS("toms.aiff")
 }
 
 suspend fun main() {
@@ -37,5 +41,4 @@ suspend fun main() {
         launch { playBeats("x-x-x-x-x-x", Drum.TOMS) }
         playBeats("x-----x-----", Drum.CRASH_CYMBAL)
     }
-
 }
